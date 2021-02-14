@@ -1,0 +1,15 @@
+package com.amazon.tests;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginTest {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver");
+		driver = new ChromeDriver();
+		driver.get("https://www.calculator.net/bmi-calculator.html");
+		driver.manage().window().maximize();
+		Thread.sleep(2000)
+	}
+
+}

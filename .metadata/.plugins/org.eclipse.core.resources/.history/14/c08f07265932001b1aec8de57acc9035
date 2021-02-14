@@ -1,0 +1,22 @@
+package Seleniumpack;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class LocateElementsByIDNameClass {
+
+	public static void main(String[] args){
+		public static WebDriver driver= null;
+		   //We need to point the chromedriver exe to the path of the executable
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver"); 
+		   //Create an instance of ChromeDriver to launch chrome browser
+		   driver = new ChromeDriver();
+		   //To navigate to the application url
+		   driver.get("https://www.calculator.net/calorie-calculator.html");
+		   WebElement ageTextbox = driver.findElement (By.id("cage"));
+		   ageTextbox.clear();
+		   ageTextbox.sendKeys(55);
+		   
+		   
+		}
+}

@@ -1,0 +1,29 @@
+package com.amazonsearch.tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class AttributeBasedSearch {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://amazon.com");
+		driver.manage().window().maximize();
+		WebElement watchsearch = driver.findElement(By.id("twotabsearchtextbox"));
+		watchsearch.sendKeys("samsung galaxy watch" + "\n");
+		System.out.println("Watch Search Executed");
+		Thread.sleep(3000);
+		watchsearch.clear();
+		WebElement searchcategory=driver.findElement(By.name("url"));
+		searchcategory.click();
+		Select dropdown=new Select (searchcategory);
+		dropdown.selectByIndex(12);
+		Thread.sleep(3000);
+		driver.close();
+
+	}
+}

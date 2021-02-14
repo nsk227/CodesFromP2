@@ -1,0 +1,5 @@
+package Seleniumpack;
+
+public class LocateElementsByIDNameClass {
+
+}

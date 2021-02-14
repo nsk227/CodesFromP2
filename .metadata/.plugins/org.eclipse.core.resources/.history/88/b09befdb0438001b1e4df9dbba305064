@@ -1,0 +1,49 @@
+package com.amazonsearch.tests;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class AttributeBasedSearch {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://amazon.com");
+		driver.manage().window().maximize();
+		WebElement watchsearch = driver.findElement(By.id("twotabsearchtextbox"));
+		watchsearch.sendKeys("samsung galaxy watch" + "\n");
+		System.out.println("Watch Search Executed");
+		Thread.sleep(1000);
+		
+		WebElement searchlist=driver.findElement(By.name("url"));
+		searchlist.click();
+		Select dropdown=new Select (searchlist);
+		dropdown.selectByIndex(12);
+		
+		
+		
+		
+		/*WebElement cart=driver.findElement(By.className("icp-radio icp-radio"));
+		Thread.sleep(3000);
+		cart.click();*/
+		
+		
+		/*List<WebElement>allBooks=driver.findElements(By.className("nav-a  "));
+		for(WebElement books:allBooks) {
+			System.out.println(cli);
+		}
+				
+		 * WebElement watchsearch1 = driver.findElement(By.id("twotabsearchtextbox"));
+		 * watchsearch1.clear(); WebElement searchcategory =
+		 * driver.findElement(By.name("url")); searchcategory.click(); Select dropdown =
+		 * new Select(searchcategory); dropdown.selectByIndex(12); WebElement searchicon
+		 * = driver.findElement(By.className("nav-line-2 nav-long-width"));
+		 * searchicon.click(); Thread.sleep(3000); // driver.close();
+		 */
+	}
+}

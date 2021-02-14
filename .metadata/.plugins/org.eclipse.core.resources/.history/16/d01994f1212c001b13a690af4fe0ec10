@@ -1,0 +1,16 @@
+package JavaOOPsPack;
+
+public class Employee {
+
+	int empid;
+	 String empname;
+	 String company;
+	  public void InsertEmpRecord(int id,String name,String comp){
+	   empid = id;
+	   empname= name;
+	   company = comp;
+	 }
+	 public void displayEmpRecord(){
+	   System.out.println("empid = "+ empid + " empname = " + empname + " company = " + company);
+	 }
+}

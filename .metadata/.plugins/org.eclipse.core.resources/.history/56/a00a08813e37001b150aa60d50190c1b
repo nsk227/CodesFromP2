@@ -1,0 +1,31 @@
+package com.amazon.tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class SearchProducts {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://amazon.com");
+		driver.manage().window().maximize();
+		WebElement search = driver.findElement(By.id("twotabsearchtextbox"));
+		search.sendKeys("samsung galaxy watch".RETURN);
+		search.sendKeys("samsung galaxy watch");
+		//Select product = new Select(search);
+		product.selectByIndex(0);
+		/*
+		 * Thread.sleep(3000); WebElement icon
+		 * =driver.findElement(By.className("nav-input"));
+		 */
+		//product.click();
+		Thread.sleep(3000);
+		driver.close();
+
+	}
+
+}

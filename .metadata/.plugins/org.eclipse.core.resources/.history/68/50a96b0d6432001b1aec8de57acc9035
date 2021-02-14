@@ -1,0 +1,43 @@
+
+package Seleniumpack;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test {
+	public static WebDriver driver = null;
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver");
+		driver = new ChromeDriver();//launching browser
+		driver.get("https://www.calculator.net/bmi-calculator.html");//navigating to url
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		WebElement ageTextbox = driver.findElement(By.id("cage"));
+		ageTextbox.clear();
+		ageTextbox.sendKeys("45");
+		Thread.sleep(3000);
+		//for List import the right package java.util.List
+				List<WebElement> genderList = driver.findElements(By.name("csex"));
+				for(WebElement gender:genderList)
+				{
+				  if(gender.getAttribute("value").equals("f"))
+				     if(!gender.isSelected())
+				     {
+				           gender.click();
+				           break;
+				     }
+				}
+
+				Thread.sleep(3000);
+				driver.close(); //close your current active browser
+			
+		}
+		   
+		   
+	}
+
+

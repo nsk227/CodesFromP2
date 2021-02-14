@@ -1,0 +1,9 @@
+package JavaPac;
+
+public class firstJavaTest {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World"););
+	}
+
+}
